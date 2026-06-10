@@ -3,6 +3,11 @@
 *.a
 *.so
 
+.env
+gitea-data/
+postgres-data/
+
+
 # Folders
 _obj
 _test
