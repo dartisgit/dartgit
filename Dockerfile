@@ -31,7 +31,6 @@ COPY --from=frontend-build /src/public/assets public/assets
 
 # Build gitea, .git mount is required for version data
 RUN --mount=type=cache,target="/root/.cache/go-build" \
-    --mount=type=bind,source=".git/",target=".git/" \
     make backend
 
 COPY docker/root /tmp/local
