@@ -28,4 +28,4 @@ jobs:
           push: true
           tags: |
             neoqiss/dartgit:latest
-            neoqiss/dartgit:${{ gitea.sha }}
+            neoqiss/dartgit:${{ github.sha }}
