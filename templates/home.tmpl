@@ -1,51 +1,86 @@
 {{template "base/head" .}}
 <div role="main" aria-label="{{if .IsSigned}}{{ctx.Locale.Tr "dashboard"}}{{else}}{{ctx.Locale.Tr "home_title"}}{{end}}" class="page-content home">
-	<div class="tw-mb-8 tw-px-8">
+	<div class="tw-mb-12 tw-px-8">
 		<div class="center">
 			<img class="logo" width="220" height="220" src="{{AssetUrlPrefix}}/img/logo.svg" alt="{{ctx.Locale.Tr "logo"}}">
 			<div class="hero">
 				<h1 class="ui icon header title tw-text-balance">
 					{{AppName}}
 				</h1>
-				<h2 class="tw-text-balance">{{ctx.Locale.Tr "startpage.app_desc"}}</h2>
+				<h2 class="tw-text-balance">The Enterprise-Grade Git Hosting & Collaboration Platform</h2>
+				<p class="tw-text-base tw-mt-4 tw-mb-6 tw-opacity-75">Host your repositories, manage projects, and collaborate with your team—all in one powerful platform.</p>
+				{{if not .IsSigned}}
+				<div class="tw-flex tw-gap-4 tw-justify-center tw-flex-wrap">
+					<a href="{{AppSubUrl}}/user/sign_up" class="ui primary button">Get Started Free</a>
+					<a href="https://dartgit.com/docs" class="ui button">Documentation</a>
+				</div>
+				{{end}}
 			</div>
 		</div>
 	</div>
+
 	<div class="ui stackable middle very relaxed page grid">
 		<div class="eight wide center column">
 			<h1 class="hero ui icon header">
-				{{svg "octicon-flame"}} {{ctx.Locale.Tr "startpage.install"}}
+				{{svg "octicon-git-branch"}} Powerful Version Control
 			</h1>
 			<p class="large tw-text-balance">
-				{{ctx.Locale.Tr "startpage.install_desc" "https://docs.gitea.com/installation/install-from-binary" "https://github.com/go-gitea/gitea/tree/master/docker" "https://docs.gitea.com/installation/install-from-package"}}
+				Git hosting with built-in collaboration tools. Support for SSH, HTTPS, and multiple authentication methods. Seamless workflow for teams of any size.
 			</p>
 		</div>
 		<div class="eight wide center column">
 			<h1 class="hero ui icon header">
-				{{svg "octicon-device-desktop"}} {{ctx.Locale.Tr "startpage.platform"}}
+				{{svg "octicon-comment-discussion"}} Code Review & Discussions
 			</h1>
 			<p class="large tw-text-balance">
-				{{ctx.Locale.Tr "startpage.platform_desc" "https://go.dev/"}}
+				Create pull requests, manage code reviews, and collaborate with inline comments. Built-in discussions for project coordination and knowledge sharing.
 			</p>
 		</div>
 	</div>
+
 	<div class="ui stackable middle very relaxed page grid">
 		<div class="eight wide center column">
 			<h1 class="hero ui icon header">
-				{{svg "octicon-rocket"}} {{ctx.Locale.Tr "startpage.lightweight"}}
+				{{svg "octicon-workflow"}} CI/CD Automation
 			</h1>
 			<p class="large tw-text-balance">
-				{{ctx.Locale.Tr "startpage.lightweight_desc"}}
+				Integrated continuous integration and deployment pipelines. Automate testing, building, and deployments directly from your repositories.
 			</p>
 		</div>
 		<div class="eight wide center column">
 			<h1 class="hero ui icon header">
-				{{svg "octicon-code"}} {{ctx.Locale.Tr "startpage.license"}}
+				{{svg "octicon-package"}} Package Registry
 			</h1>
 			<p class="large tw-text-balance">
-				{{ctx.Locale.Tr "startpage.license_desc" "https://gitea.dev" "gitea.dev" "https://github.com/go-gitea/gitea"}}
+				Host and manage packages alongside your source code. Support for NPM, Docker, Maven, and more—unified in a single platform.
 			</p>
 		</div>
 	</div>
+
+	<div class="ui stackable middle very relaxed page grid">
+		<div class="eight wide center column">
+			<h1 class="hero ui icon header">
+				{{svg "octicon-lock"}} Enterprise Security
+			</h1>
+			<p class="large tw-text-balance">
+				Advanced access controls, team management, and organization-wide permissions. SAML/LDAP integration for enterprise environments.
+			</p>
+		</div>
+		<div class="eight wide center column">
+			<h1 class="hero ui icon header">
+				{{svg "octicon-rocket"}} Lightning Fast
+			</h1>
+			<p class="large tw-text-balance">
+				Optimized performance for teams of any scale. Blazing-fast repository operations with minimal latency and maximum reliability.
+			</p>
+		</div>
+	</div>
+
+	{{if not .IsSigned}}
+	<div class="tw-mt-12 tw-mb-6 tw-px-8 tw-text-center">
+		<h2 class="tw-text-2xl tw-mb-4">Ready to supercharge your development workflow?</h2>
+		<a href="{{AppSubUrl}}/user/sign_up" class="ui massive primary button">Start Your Free Trial Today</a>
+	</div>
+	{{end}}
 </div>
 {{template "base/footer" .}}
